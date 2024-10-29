@@ -42,8 +42,8 @@ class _MyListViewPageState extends State<ListViewPage> {
           return Card(
             margin: const EdgeInsets.all(8.0),
             child: ListTile(
-              title: Text(item['title'] ?? 'No Title'),
-              subtitle: Text(item['body'] ?? 'No Content'),
+              title: Text(item['title'] ?? 'No Title.'),
+              subtitle: Text(item['body'] ?? 'No Content.'),
             ),
           );
         },
