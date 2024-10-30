@@ -14,6 +14,7 @@ class _MyCalculatorPageState extends State<CalculatorPage> {
   double? _firstNumber;
   String? _operator;
   bool _isNewNumber = true;
+  String _textAll = "0";
 
   void addNumber(int number) {
     setState(() {
@@ -35,6 +36,7 @@ class _MyCalculatorPageState extends State<CalculatorPage> {
   void deleteAll() {
     setState(() {
       _answer = "0";
+      _textAll = "0";
     });
   }
 
@@ -53,6 +55,11 @@ class _MyCalculatorPageState extends State<CalculatorPage> {
       _firstNumber = double.parse(_answer);
       _operator = operator;
       _isNewNumber = true;
+      if (_textAll == "0") {
+        _textAll = _answer + operator;
+      } else {
+        _textAll += _answer + operator;
+      }
     });
   }
 
@@ -111,7 +118,11 @@ class _MyCalculatorPageState extends State<CalculatorPage> {
                 alignment: Alignment.bottomRight,
                 child: Column(
                     mainAxisSize: MainAxisSize.min,
+                    crossAxisAlignment: CrossAxisAlignment.end,
                     children: <Widget>[
+                      Text(_textAll,
+                          style: const TextStyle(
+                              fontSize: 30, fontWeight: FontWeight.bold)),
                       Text(_answer,
                           style: const TextStyle(
                               fontSize: 48, fontWeight: FontWeight.bold))

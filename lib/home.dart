@@ -77,6 +77,36 @@ class _MyHomePageState extends State<HomePage> {
                               fontWeight: FontWeight.bold,
                               color: Colors.black)))),
             ),
+            InkWell(
+              onTap: () {
+                Navigator.pushNamed(
+                  context,
+                  "/todolist",
+                );
+                // Navigator.push(
+                //   context,
+                //   MaterialPageRoute(
+                //     builder: (context) => ListViewPage(
+                //       title: 'List View',
+                //       data: _data,
+                //     ),
+                //   ),
+                // );
+              },
+              child: Container(
+                  margin: const EdgeInsets.all(8),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(16),
+                  ),
+                  height: 100,
+                  child: const Center(
+                      child: Text('To Do List',
+                          style: TextStyle(
+                              fontSize: 26,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black)))),
+            ),
           ],
         ),
       ),
